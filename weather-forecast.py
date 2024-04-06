@@ -13,7 +13,7 @@ data = data.dropna(subset=["RainTomorrow"])
 # 處理缺失值，這裡我們將NA值替換為該列的平均值
 numeric_cols = data.select_dtypes(include=["float64", "int64"]).columns
 for col in numeric_cols:
-    data[col].fillna(data[col].mean(), inplace=True)
+    data.loc[:, col] = data.loc[:, col].fillna(data[col].mean())
 
 # 將日期轉換為自1970年1月1日以來的天數
 data["Date"] = pd.to_datetime(data["Date"])
@@ -24,11 +24,11 @@ categorical_cols = data.select_dtypes(include=["object"]).columns
 for col in categorical_cols:
     if col != "RainTomorrow":  # 我們不轉換目標欄位
         le = LabelEncoder()
-        data[col] = le.fit_transform(data[col].astype(str))
+        data.loc[:, col] = le.fit_transform(data[col].astype(str))
 
 # 定義特徵和標籤
 X = data.drop(["RainTomorrow"], axis=1)  # 特徵
-y = data["RainTomorrow"].replace({"No": 0, "Yes": 1})  # 標籤
+y = data["RainTomorrow"].map({"No": 0, "Yes": 1})  # 標籤
 
 # 分割資料集
 X_train, X_test, y_train, y_test = train_test_split(

@@ -1,6 +1,4 @@
-# 這是一段用 Bing AI 寫的 code。使用 Kaggle 上 Rain in Australia 這個專案的資料集，預測隔日天氣是否為下雨(RainTomorrow 欄位)。程式碼包含了資料的前處裡(空值、字串轉為數值等)，使用隨機森林訓練模型並測試準確度。以下是與 Bing 的對話過程。
-
-# 對話紀錄
+這是一段用 Bing AI 寫的 code。使用 Kaggle 上 Rain in Australia 這個專案的資料集，預測隔日天氣是否為下雨(RainTomorrow 欄位)。程式碼包含了資料的前處裡(空值、字串轉為數值等)，使用隨機森林訓練模型並測試準確度。以下是與 Bing 的對話過程。
 
 ## 使用者問題:
 
