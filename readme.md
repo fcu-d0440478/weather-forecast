@@ -53,7 +53,7 @@ could not convert string to float: ‘2015-06-18’
 
 這個錯誤發生是因為你嘗試將一個日期字符串轉換為浮點數，這在 Python 中是不允許的。如果你想將日期轉換為浮點數，你需要先將日期轉換為某種數值表示，例如將日期轉換為自某個特定日期以來的天數。這裡有一個示例代碼，展示了如何處理這個問題：
 
-```
+```python
 from datetime import datetime
 
 # 假設你的日期字符串是這樣的格式: 'YYYY-MM-DD'
@@ -84,7 +84,7 @@ print(float_representation)
 
 要將 DataFrame 中的 Date 欄位轉換為數字以便於模型處理，你可以使用 to_datetime()函數將字符串轉換為日期時間對象，然後提取出所需的數值特徵。以下是一個示例代碼，展示了如何將日期轉換為自 1970 年 1 月 1 日以來的天數：
 
-```
+```python
 import pandas as pd
 
 # 假設你的DataFrame名為X，並且有一個名為'Date'的欄位
@@ -112,7 +112,7 @@ could not convert string to float:
 
 當然可以。要將 CSV 檔案中的非數值欄位轉換為數值，我們可以使用一些預處理技術。以下是一個完整的代碼示例，它包括了數據清洗和轉換的步驟，以便將所有欄位轉換為數值型態：
 
-```
+```python
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -170,7 +170,7 @@ Input y contains NaN.
 
 當然可以。在進行模型訓練之前，我們需要確保目標欄位 RainTomorrow 中沒有缺失值。以下是一段代碼，它將從你的資料集中刪除任何 RainTomorrow 欄位為空的資料筆：
 
-```
+```python
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
